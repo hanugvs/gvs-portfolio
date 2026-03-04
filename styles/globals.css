@@ -5,8 +5,12 @@
 body {
   margin: 0;
   padding: 10px;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(79,70,229,0.08), transparent),
-    radial-gradient(800px 400px at 90% 90%, rgba(55,65,81,0.06), transparent),
+  background: radial-gradient(
+      1200px 600px at 10% 10%,
+      rgba(79, 70, 229, 0.08),
+      transparent
+    ),
+    radial-gradient(800px 400px at 90% 90%, rgba(55, 65, 81, 0.06), transparent),
     #0b0b0c;
   color: #e6eef8;
 }
@@ -15,7 +19,12 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Inter', sans-serif;
 }
 
@@ -32,21 +41,31 @@ button {
   @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded;
 }
 
-input, textarea {
+input,
+textarea {
   @apply border border-gray-600 bg-gray-800 text-white p-2 rounded;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   @apply outline-none border-blue-500;
 }
 
 /* Glassmorphism */
 .glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(8px) saturate(120%);
 }
 
-.muted { color: rgba(230,238,248,0.7); }
+.muted {
+  color: rgba(230, 238, 248, 0.7);
+}
 
-.tag { @apply text-xs px-2 py-1 rounded-md bg-white/5 text-gray-100; }
+.tag {
+  @apply text-xs px-2 py-1 rounded-md bg-white/5 text-gray-100;
+}

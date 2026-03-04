@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -21,16 +21,24 @@ const ExperienceTimeline: React.FC = () => {
             >
               <div className="flex items-center">
                 <div className="w-1/4 text-right pr-4">
-                  <span className="block text-lg font-semibold">{item.company}</span>
-                  <span className="block text-sm text-gray-400">{item.role}</span>
-                  <span className="block text-xs text-gray-500">{item.duration}</span>
+                  <span className="block text-lg font-semibold">
+                    {item.company}
+                  </span>
+                  <span className="block text-sm text-gray-400">
+                    {item.role}
+                  </span>
+                  <span className="block text-xs text-gray-500">
+                    {item.duration}
+                  </span>
                 </div>
                 <div className="w-3/4">
                   <div className="p-4 bg-gray-800 rounded-lg shadow-md">
                     <p>{item.description}</p>
                     <ul className="mt-2">
                       {item.impactPoints.map((point, idx) => (
-                        <li key={idx} className="text-gray-300">• {point}</li>
+                        <li key={idx} className="text-gray-300">
+                          • {point}
+                        </li>
                       ))}
                     </ul>
                   </div>

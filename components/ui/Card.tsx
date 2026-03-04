@@ -14,11 +14,20 @@ interface CardProps {
   project?: ProjectLike;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, techStack, link, project }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  description,
+  techStack,
+  link,
+  project,
+}) => {
   const renderTags = (tags?: string[]) => (
     <div className="mt-4">
       {tags?.map((tech, index) => (
-        <span key={index} className="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">
+        <span
+          key={index}
+          className="inline-block bg-gray-700 text-gray-300 text-xs font-medium mr-2 px-2.5 py-0.5 rounded"
+        >
           {tech}
         </span>
       ))}
@@ -39,7 +48,12 @@ const Card: React.FC<CardProps> = ({ title, description, techStack, link, projec
           <p className="text-gray-300 mt-2">{description}</p>
           {renderTags(techStack)}
           {link && (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-blue-400 hover:underline">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-blue-400 hover:underline"
+            >
               View Project
             </a>
           )}

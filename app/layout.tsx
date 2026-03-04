@@ -4,7 +4,8 @@ import Header from '../components/Header';
 
 export const metadata = {
   title: 'Senior Frontend / Full Stack Developer',
-  description: 'Showcasing my skills, experience, and projects as a Senior Frontend / Full Stack Developer.',
+  description:
+    'Showcasing my skills, experience, and projects as a Senior Frontend / Full Stack Developer.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

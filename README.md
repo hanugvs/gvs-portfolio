@@ -70,21 +70,25 @@ senior-portfolio-nextjs
 ## Getting Started
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/senior-portfolio-nextjs.git
    ```
 
 2. Navigate to the project directory:
+
    ```
    cd senior-portfolio-nextjs
    ```
 
 3. Install dependencies:
+
    ```
    npm install
    ```
 
 4. Run the development server:
+
    ```
    npm run dev
    ```

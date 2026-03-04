@@ -12,11 +12,13 @@ const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = 'rounded focus:outline-none focus:ring-2 focus:ring-opacity-50';
+  const baseStyles =
+    'rounded focus:outline-none focus:ring-2 focus:ring-opacity-50';
   const variantStyles = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700',
-    outline: 'border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    outline:
+      'border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
   };
   const sizeStyles = {
     small: 'px-2 py-1 text-sm',

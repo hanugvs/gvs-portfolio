@@ -13,12 +13,39 @@ export default function Header() {
         </a>
 
         <nav className="flex justify-center">
-          <a href="" className="mx-3 text-sm text-gray-200 hover:text-blue-300">Home</a>
-          <a href="#about" className="mx-3 text-sm text-gray-200 hover:text-blue-300">About</a>
-          <a href="#skills" className="mx-3 text-sm text-gray-200 hover:text-blue-300">Skills</a>
-          <a href="#experience" className="mx-3 text-sm text-gray-200 hover:text-blue-300">Experience</a>
-          <a href="#projects" className="mx-3 text-sm text-gray-200 hover:text-blue-300">Projects</a>
-          <a href="#contact" className="mx-3 text-sm text-gray-200 hover:text-blue-300">Contact</a>
+          <a href="" className="mx-3 text-sm text-gray-200 hover:text-blue-300">
+            Home
+          </a>
+          <a
+            href="#about"
+            className="mx-3 text-sm text-gray-200 hover:text-blue-300"
+          >
+            About
+          </a>
+          <a
+            href="#skills"
+            className="mx-3 text-sm text-gray-200 hover:text-blue-300"
+          >
+            Skills
+          </a>
+          <a
+            href="#experience"
+            className="mx-3 text-sm text-gray-200 hover:text-blue-300"
+          >
+            Experience
+          </a>
+          <a
+            href="#projects"
+            className="mx-3 text-sm text-gray-200 hover:text-blue-300"
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            className="mx-3 text-sm text-gray-200 hover:text-blue-300"
+          >
+            Contact
+          </a>
         </nav>
       </div>
     </header>
