@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Button from '../ui/Button';
-import Avatar from '../ui/Avatar';
 import Image from 'next/image';
 
 const Hero: React.FC = () => {

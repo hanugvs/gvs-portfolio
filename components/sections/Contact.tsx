@@ -1,69 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import Button from '../ui/Button';
+import React from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSuccessMessage('');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSuccessMessage('Your message has been sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        throw new Error('Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      setSuccessMessage(error.message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // contact form handlers removed because the component currently renders
+  // static contact details; re-add form logic if you want a contact form.
 
   return (
     <section id="contact" className="bg-gray-800 text-white py-10">
       <div className="container mx-auto">
-        <motion.h2
-          className="flex items-center justify-center text-3xl font-bold mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <h2 className="flex items-center justify-center text-3xl font-bold mb-6">
           Contact
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <div>
           <div className="glass p-6 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <p className="text-lg">
@@ -109,7 +59,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
