@@ -1,25 +1,77 @@
 import '../styles/globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { IBM_Plex_Sans, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import localFont from 'next/font/local';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
+const spaceGrotesk = localFont({
+  src: [
+    {
+      path: '../fonts/SpaceGrotesk-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/SpaceGrotesk-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/SpaceGrotesk-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/SpaceGrotesk-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
   variable: '--font-display',
   display: 'swap',
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const ibmPlexSans = localFont({
+  src: [
+    {
+      path: '../fonts/IBMPlexSans-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/IBMPlexSans-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/IBMPlexSans-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/IBMPlexSans-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
   variable: '--font-body',
   display: 'swap',
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
+const jetbrainsMono = localFont({
+  src: [
+    {
+      path: '../fonts/JetBrainsMono-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/JetBrainsMono-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
   variable: '--font-mono',
   display: 'swap',
 });
