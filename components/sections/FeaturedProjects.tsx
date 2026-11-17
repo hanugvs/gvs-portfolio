@@ -1,27 +1,23 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { projects } from '../../data/projects';
-import Card from '../ui/Card';
+import SectionHeading from '../ui/SectionHeading';
+import ProjectCard from '../ui/ProjectCard';
 
 const FeaturedProjects: React.FC = () => {
   return (
-    <section id="projects" className="py-10">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Featured Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map(project => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card project={project} />
-            </motion.div>
+    <section id="projects" className="py-20 lg:py-24">
+      <div className="section-shell">
+        <SectionHeading
+          label="Selected work"
+          title="Featured Projects"
+          description="Case studies across enterprise, banking, and commerce platforms—built for scale, security, and delivery."
+        />
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>

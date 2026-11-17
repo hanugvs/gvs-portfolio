@@ -1,4 +1,6 @@
-export const projects = [
+import { Project } from '../types';
+
+export const projects: Project[] = [
   {
     id: 'verizon-maslow',
     title: 'Verizon Maslow',
@@ -6,6 +8,7 @@ export const projects = [
       'Enterprise telecom portal with workflow orchestration and secure auth.',
     techStack: ['React', 'Next.js', 'TypeScript', 'Node.js'],
     link: '#',
+    category: 'Enterprise',
   },
   {
     id: 'yesbank-crm',
@@ -14,6 +17,7 @@ export const projects = [
       'CRM for retail banking with analytics and process automation.',
     techStack: ['Angular', 'Node.js', 'MySQL'],
     link: '#',
+    category: 'Banking',
   },
   {
     id: 'hdfc-netbanking',
@@ -22,6 +26,7 @@ export const projects = [
       'High-availability net-banking front-end with strong security measures.',
     techStack: ['React', 'Micro-frontends', 'AWS'],
     link: '#',
+    category: 'Banking',
   },
   {
     id: 'ocbc-insurance',
@@ -29,6 +34,7 @@ export const projects = [
     description: 'Insurance purchase and claims flow with simplified UX.',
     techStack: ['Next.js', 'Serverless', 'MongoDB'],
     link: '#',
+    category: 'Banking',
   },
   {
     id: 'tapestry-ecommerce',
@@ -37,6 +43,7 @@ export const projects = [
       'Headless commerce implementation focused on conversion and performance.',
     techStack: ['Next.js', 'Stripe', 'React'],
     link: '#',
+    category: 'E-commerce',
   },
   {
     id: 'danamon-bank',
@@ -44,5 +51,6 @@ export const projects = [
     description: 'Digital banking workflows and secure transaction systems.',
     techStack: ['React', 'Node.js', 'AWS'],
     link: '#',
+    category: 'Banking',
   },
 ];

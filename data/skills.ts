@@ -1,4 +1,6 @@
-export const skills = [
+import { Skill } from '../types';
+
+export const skills: Skill[] = [
   {
     category: 'Frontend',
     skills: [
@@ -15,14 +17,7 @@ export const skills = [
   },
   {
     category: 'Backend',
-    skills: [
-      'Node.js',
-      'Express',
-      'MySQL',
-      'MongoDB',
-      'GraphQL',
-      'RESTful APIs',
-    ],
+    skills: ['Node.js', 'Express', 'MySQL', 'MongoDB', 'GraphQL', 'REST APIs'],
   },
   {
     category: 'Cloud & DevOps',
@@ -44,11 +39,11 @@ export const skills = [
     ],
   },
   {
-    category: 'AI Tools',
+    category: 'AI / GenAI',
     skills: [
       'OpenAI APIs',
       'LangChain',
-      'Embedding-based search',
+      'RAG / Embedding search',
       'LLM integrations',
     ],
   },

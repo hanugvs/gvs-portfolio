@@ -1,23 +1,22 @@
-import { useTheme } from '../../hooks/useTheme';
-import { SunIcon, MoonIcon } from '@heroicons/react/outline';
+'use client';
+
+import { Moon, Sun } from 'lucide-react';
+import useTheme from '../../hooks/useTheme';
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
-      className="flex items-center justify-center p-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition duration-300"
+      className="flex items-center justify-center rounded-full bg-white/5 p-2 text-ink transition hover:bg-white/10"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <SunIcon className="w-6 h-6" />
+        <Sun className="h-5 w-5" />
       ) : (
-        <MoonIcon className="w-6 h-6" />
+        <Moon className="h-5 w-5" />
       )}
     </button>
   );

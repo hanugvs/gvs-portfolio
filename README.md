@@ -1,100 +1,51 @@
-# Senior Portfolio Website
+# G. Vannur — Premium Portfolio
 
-This is a modern portfolio website built for a Senior Frontend / Full Stack Developer using Next.js 14, TypeScript, Tailwind CSS, ShadCN UI, and Framer Motion animations. The website features a dark professional theme and includes various sections to showcase skills, experience, and projects.
-
-## Project Structure
-
-```
-senior-portfolio-nextjs
-├── app
-│   ├── layout.tsx
-│   ├── head.tsx
-│   ├── page.tsx
-│   └── api
-│       └── contact
-│           └── route.ts
-├── components
-│   ├── ui
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   ├── Avatar.tsx
-│   │   └── ThemeToggle.tsx
-│   ├── sections
-│   │   ├── Hero.tsx
-│   │   ├── About.tsx
-│   │   ├── Skills.tsx
-│   │   ├── ExperienceTimeline.tsx
-│   │   ├── FeaturedProjects.tsx
-│   │   └── Contact.tsx
-│   └── MotionWrapper.tsx
-├── data
-│   ├── projects.ts
-│   ├── experience.ts
-│   └── skills.ts
-├── lib
-│   ├── api.ts
-│   └── fetcher.ts
-├── hooks
-│   └── useTheme.ts
-├── types
-│   └── index.ts
-├── styles
-│   └── globals.css
-├── package.json
-├── tsconfig.json
-├── next.config.js
-├── tailwind.config.cjs
-├── postcss.config.cjs
-├── .eslintrc.cjs
-├── .prettierrc
-└── README.md
-```
+Dark tech portfolio for a Senior Frontend / Full Stack Engineer. Built with Next.js 14, TypeScript, Tailwind CSS, Framer Motion, GSAP, and a procedural React Three Fiber hero.
 
 ## Features
 
-- **Hero Section**: Displays the developer's name, title, tagline, and action buttons.
-- **About Section**: Highlights the developer's experience and skills.
-- **Skills Section**: Categorizes and displays the developer's skills.
-- **Experience Timeline**: Showcases the developer's work history and impact points.
-- **Featured Projects**: Displays project cards with tech stack tags.
-- **Contact Section**: Includes a contact form for inquiries.
-
-## Technologies Used
-
-- **Next.js 14**: For server-side rendering and static site generation.
-- **TypeScript**: For type safety and better development experience.
-- **Tailwind CSS**: For utility-first CSS styling.
-- **ShadCN UI**: For UI components.
-- **Framer Motion**: For smooth animations and transitions.
+- Cinematic R3F workspace hero (lazy-loaded; CSS fallback on mobile / reduced motion)
+- Sticky glass navbar with active section tracking
+- About, Skills (tabbed), Experience timeline, Project case cards, Contact form
+- Resend-backed contact API
+- SEO: metadata, sitemap, robots, Person JSON-LD
 
 ## Getting Started
 
-1. Clone the repository:
+```bash
+npm install
+npm run dev
+```
 
-   ```
-   git clone https://github.com/yourusername/senior-portfolio-nextjs.git
-   ```
+Open [http://localhost:3000](http://localhost:3000) (or the next free port if 3000 is taken).
 
-2. Navigate to the project directory:
+## Environment Variables
 
-   ```
-   cd senior-portfolio-nextjs
-   ```
+Create a `.env.local` file:
 
-3. Install dependencies:
+```env
+# Required for the contact form to send email
+RESEND_API_KEY=re_xxxxxxxx
 
-   ```
-   npm install
-   ```
+# Optional overrides
+CONTACT_TO_EMAIL=gvs1.dev@gmail.com
+CONTACT_FROM_EMAIL=Portfolio Contact <onboarding@resend.dev>
+```
 
-4. Run the development server:
+Without `RESEND_API_KEY`, `POST /api/contact` returns **503** with a clear configuration message (no fake success).
 
-   ```
-   npm run dev
-   ```
+## Scripts
 
-5. Open your browser and go to `http://localhost:3000` to view the portfolio.
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm start` — serve production build
+
+## Notes
+
+- Resume download: `/images/gvs_fs.pdf`
+- Contact: `+91 7019723240`, `gvs1.dev@gmail.com`, WhatsApp
+- No LinkedIn URL is published
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+MIT

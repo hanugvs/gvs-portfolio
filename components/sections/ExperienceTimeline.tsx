@@ -1,51 +1,124 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Experience } from '../../types';
+import React, { useEffect, useRef } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { experience } from '../../data/experience';
+import type { Experience } from '../../types';
+import SectionHeading from '../ui/SectionHeading';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const ExperienceTimeline: React.FC = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (reduceMotion || !trackRef.current) return;
+
+    const line = trackRef.current.querySelector('[data-timeline-line]');
+    if (!line) return;
+
+    const tween = gsap.fromTo(
+      line,
+      { scaleY: 0 },
+      {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: trackRef.current,
+          start: 'top 70%',
+          end: 'bottom 30%',
+          scrub: true,
+        },
+      },
+    );
+
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, [reduceMotion]);
+
   return (
-    <section id="experience" className="py-10 bg-gray-900 text-white">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10">Experience</h2>
-        <div className="relative">
-          {experience.map((item: Experience, index: number) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-10"
-            >
-              <div className="flex items-center">
-                <div className="w-1/4 text-right pr-4">
-                  <span className="block text-lg font-semibold">
-                    {item.company}
-                  </span>
-                  <span className="block text-sm text-gray-400">
-                    {item.role}
-                  </span>
-                  <span className="block text-xs text-gray-500">
-                    {item.duration}
-                  </span>
-                </div>
-                <div className="w-3/4">
-                  <div className="p-4 bg-gray-800 rounded-lg shadow-md">
-                    <p>{item.description}</p>
-                    <ul className="mt-2">
-                      {item.impactPoints.map((point, idx) => (
-                        <li key={idx} className="text-gray-300">
-                          • {point}
-                        </li>
-                      ))}
-                    </ul>
+    <section id="experience" className="py-20 lg:py-24">
+      <div className="section-shell">
+        <SectionHeading
+          label="Career"
+          title="Experience"
+          description="A path through enterprise and banking platforms—preserving every role, tenure, and impact delivered."
+        />
+
+        <div ref={trackRef} className="relative mx-auto max-w-4xl">
+          <div
+            aria-hidden
+            className="absolute bottom-2 left-[11px] top-2 w-px origin-top bg-gradient-to-b from-cyan via-blue-accent to-violet-accent/60 sm:left-1/2 sm:-translate-x-1/2"
+            data-timeline-line
+          />
+
+          <ol className="space-y-8">
+            {experience.map((item: Experience, index: number) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <motion.li
+                  key={item.id}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.45, delay: index * 0.04 }}
+                  className="relative grid gap-4 sm:grid-cols-2 sm:gap-10"
+                >
+                  <div
+                    className={`absolute left-[7px] top-5 h-2.5 w-2.5 rounded-full border-2 border-cyan bg-[#070b14] sm:left-1/2 sm:-translate-x-1/2 ${
+                      isLeft ? '' : ''
+                    }`}
+                    aria-hidden
+                  />
+
+                  <div
+                    className={`pl-10 sm:pl-0 ${
+                      isLeft
+                        ? 'sm:pr-10 sm:text-right'
+                        : 'sm:col-start-2 sm:pl-10'
+                    }`}
+                  >
+                    <p className="font-mono-accent text-xs text-cyan">
+                      {item.duration}
+                    </p>
+                    <h3 className="mt-1 text-xl font-semibold text-ink">
+                      {item.company}
+                    </h3>
+                    <p className="muted mt-1 text-sm">{item.role}</p>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+
+                  <div
+                    className={`pl-10 sm:pl-0 ${
+                      isLeft
+                        ? 'sm:col-start-2 sm:pl-10'
+                        : 'sm:col-start-1 sm:row-start-1 sm:pr-10'
+                    }`}
+                  >
+                    <div className="glass-panel rounded-2xl p-5 shadow-panel">
+                      <ul className="space-y-2">
+                        {item.impactPoints.map(point => (
+                          <li
+                            key={point}
+                            className="flex gap-2 text-sm leading-relaxed text-ink/85"
+                          >
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </motion.li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>
