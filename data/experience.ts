@@ -1,9 +1,20 @@
 export const experience = [
   {
+    id: 'wipro',
+    company: 'Wipro Limited',
+    role: 'Senior Technical Lead - Fullstack GenAI',
+    duration: 'June 2026 - Present',
+    impactPoints: [
+      'Leading fullstack and GenAI initiatives across enterprise delivery programs.',
+      'Architecting AI-powered application features with OpenAI APIs and LLM workflows.',
+      'Mentoring engineers on React/Next.js, Node.js, and secure cloud-native delivery.',
+    ],
+  },
+  {
     id: 'infinite-computer',
     company: 'Infinite Computer Solutions',
     role: 'Senior Frontend / Full Stack Engineer',
-    duration: '2019 - Present',
+    duration: '2019 - May 2026',
     impactPoints: [
       'Led front-end platform migrations to React/Next.js, improving performance and developer DX.',
       'Designed micro-frontend integration patterns used across banking clients.',
