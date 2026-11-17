@@ -7,7 +7,7 @@ import ProjectCard from '../ui/ProjectCard';
 
 const FeaturedProjects: React.FC = () => {
   return (
-    <section id="projects" className="py-20 lg:py-24">
+    <section id="projects" className="py-8 sm:py-10 lg:py-12">
       <div className="section-shell">
         <SectionHeading
           label="Selected work"
@@ -15,7 +15,7 @@ const FeaturedProjects: React.FC = () => {
           description="Case studies across enterprise, banking, and commerce platforms—built for scale, security, and delivery."
         />
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

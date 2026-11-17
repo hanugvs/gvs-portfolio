@@ -4,8 +4,8 @@ const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 py-8">
-      <div className="section-shell flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+    <footer className="border-t border-white/10 py-5 sm:py-6">
+      <div className="section-shell flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
         <p className="text-sm text-ink/80">
           © {year} G. Vannur — Senior Frontend / Full Stack Engineer
         </p>

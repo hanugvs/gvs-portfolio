@@ -27,14 +27,14 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5 }}
-      className={`mb-10 flex max-w-2xl flex-col gap-3 ${alignment}`}
+      className={`mb-6 flex max-w-2xl flex-col gap-2 ${alignment}`}
     >
       {label ? <span className="section-label">{label}</span> : null}
-      <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+      <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
         {title}
       </h2>
       {description ? (
-        <p className="muted text-base leading-relaxed sm:text-lg">
+        <p className="muted text-sm leading-relaxed sm:text-base">
           {description}
         </p>
       ) : null}

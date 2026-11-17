@@ -12,7 +12,7 @@ const Skills: React.FC = () => {
   const activeCategory = skills.find(s => s.category === active);
 
   return (
-    <section id="skills" className="py-20 lg:py-24">
+    <section id="skills" className="py-8 sm:py-10 lg:py-12">
       <div className="section-shell">
         <SectionHeading
           label="Capabilities"
@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
         />
 
         <div
-          className="mb-8 flex flex-wrap gap-2"
+          className="mb-5 flex flex-wrap gap-2"
           role="tablist"
           aria-label="Skill categories"
         >
@@ -54,7 +54,7 @@ const Skills: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25 }}
-              className="grid gap-5 md:grid-cols-2 xl:grid-cols-3"
+              className="grid gap-4 md:grid-cols-2 xl:grid-cols-3"
             >
               {skills.map(cat => (
                 <SkillCategoryPanel

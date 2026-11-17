@@ -44,7 +44,7 @@ const ExperienceTimeline: React.FC = () => {
   }, [reduceMotion]);
 
   return (
-    <section id="experience" className="py-20 lg:py-24">
+    <section id="experience" className="py-8 sm:py-10 lg:py-12">
       <div className="section-shell">
         <SectionHeading
           label="Career"
@@ -55,11 +55,11 @@ const ExperienceTimeline: React.FC = () => {
         <div ref={trackRef} className="relative mx-auto max-w-4xl">
           <div
             aria-hidden
-            className="absolute bottom-2 left-[11px] top-2 w-px origin-top bg-gradient-to-b from-cyan via-blue-accent to-violet-accent/60 sm:left-1/2 sm:-translate-x-1/2"
+            className="absolute bottom-2 left-[11px] top-2 w-px origin-top bg-gradient-to-b from-cyan via-blue-accent to-violet-accent/60 md:left-1/2 md:-translate-x-1/2"
             data-timeline-line
           />
 
-          <ol className="space-y-8">
+          <ol className="space-y-5 sm:space-y-6">
             {experience.map((item: Experience, index: number) => {
               const isLeft = index % 2 === 0;
               return (
@@ -69,39 +69,37 @@ const ExperienceTimeline: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.45, delay: index * 0.04 }}
-                  className="relative grid gap-4 sm:grid-cols-2 sm:gap-10"
+                  className="relative grid gap-3 md:grid-cols-2 md:gap-10"
                 >
                   <div
-                    className={`absolute left-[7px] top-5 h-2.5 w-2.5 rounded-full border-2 border-cyan bg-[#070b14] sm:left-1/2 sm:-translate-x-1/2 ${
-                      isLeft ? '' : ''
-                    }`}
+                    className="absolute left-[7px] top-5 h-2.5 w-2.5 rounded-full border-2 border-cyan bg-[#070b14] md:left-1/2 md:-translate-x-1/2"
                     aria-hidden
                   />
 
                   <div
-                    className={`pl-10 sm:pl-0 ${
+                    className={`pl-9 md:pl-0 ${
                       isLeft
-                        ? 'sm:pr-10 sm:text-right'
-                        : 'sm:col-start-2 sm:pl-10'
+                        ? 'md:pr-10 md:text-right'
+                        : 'md:col-start-2 md:pl-10'
                     }`}
                   >
                     <p className="font-mono-accent text-xs text-cyan">
                       {item.duration}
                     </p>
-                    <h3 className="mt-1 text-xl font-semibold text-ink">
+                    <h3 className="mt-1 text-lg font-semibold text-ink sm:text-xl">
                       {item.company}
                     </h3>
                     <p className="muted mt-1 text-sm">{item.role}</p>
                   </div>
 
                   <div
-                    className={`pl-10 sm:pl-0 ${
+                    className={`pl-9 md:pl-0 ${
                       isLeft
-                        ? 'sm:col-start-2 sm:pl-10'
-                        : 'sm:col-start-1 sm:row-start-1 sm:pr-10'
+                        ? 'md:col-start-2 md:pl-10'
+                        : 'md:col-start-1 md:row-start-1 md:pr-10'
                     }`}
                   >
-                    <div className="glass-panel rounded-2xl p-5 shadow-panel">
+                    <div className="glass-panel rounded-2xl p-4 shadow-panel sm:p-5">
                       <ul className="space-y-2">
                         {item.impactPoints.map(point => (
                           <li
@@ -109,7 +107,7 @@ const ExperienceTimeline: React.FC = () => {
                             className="flex gap-2 text-sm leading-relaxed text-ink/85"
                           >
                             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
-                            <span>{point}</span>
+                            <span className="min-w-0 break-words">{point}</span>
                           </li>
                         ))}
                       </ul>

@@ -50,9 +50,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
         </div>
       </div>
 
-      <div className="space-y-4 p-6">
+      <div className="space-y-3 p-4 sm:space-y-4 sm:p-6">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-xl font-semibold text-ink">{project.title}</h3>
+          <h3 className="text-lg font-semibold text-ink sm:text-xl">
+            {project.title}
+          </h3>
           {project.link && project.link !== '#' ? (
             <a
               href={project.link}

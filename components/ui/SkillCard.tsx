@@ -50,12 +50,14 @@ export const SkillCategoryPanel: React.FC<SkillCategoryProps> = ({
   const Icon = iconMap[category] ?? Boxes;
 
   return (
-    <div className="glass-panel rounded-2xl p-6 shadow-panel">
-      <div className="mb-5 flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
+    <div className="glass-panel rounded-2xl p-4 shadow-panel sm:p-5">
+      <div className="mb-3 flex items-center gap-3 sm:mb-4">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan/10 text-cyan sm:h-10 sm:w-10">
           <Icon size={18} aria-hidden />
         </span>
-        <h3 className="text-lg font-semibold text-ink">{category}</h3>
+        <h3 className="text-base font-semibold text-ink sm:text-lg">
+          {category}
+        </h3>
       </div>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (

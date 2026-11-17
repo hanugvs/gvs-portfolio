@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="glass-panel space-y-4 rounded-2xl p-6 shadow-panel"
+      className="glass-panel space-y-4 rounded-2xl p-4 shadow-panel sm:p-6"
       noValidate
     >
       <div className="grid gap-4 sm:grid-cols-2">
